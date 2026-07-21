@@ -1,6 +1,6 @@
 # HackMate AI
 
-## Your AI Hackathon Co-Founder
+## Your AI Co-Founder for Building Winning Hackathon Projects
 
 HackMate AI is an innovative tool designed to empower hackathon participants by transforming their raw ideas into a structured Hackathon Canvas in seconds. Leveraging the power of OpenAI's GPT models, HackMate AI provides comprehensive insights into project ideas, MVP (Minimum Viable Product) suggestions, recommended tech stacks, team role allocations, a 48-hour development roadmap, monetization strategies, and winning tips for hackathons.
 
@@ -13,20 +13,54 @@ This project was developed for the OpenAI Build Week, emphasizing the integratio
 *   **Editable Canvas:** Users can directly edit any section of the generated canvas to refine details.
 *   **Export Functionality:** Export the generated canvas as Markdown or PDF for easy sharing and documentation.
 *   **User-Friendly Interface:** Clean and responsive design built with React, Vite, and TailwindCSS.
+## AI Development Process
 
-## Technological Implementation (OpenAI Build Week Focus)
+HackMate AI was developed using AI-assisted engineering.
 
-This project heavily relies on OpenAI's advanced models and tools, specifically targeting the requirements of the OpenAI Build Week:
+### ChatGPT (GPT-5.6)
 
-*   **OpenAI GPT-4o (or GPT-5.6 if available):** The core AI logic for generating the Hackathon Canvas is powered by OpenAI's GPT-4o model. This model is used to interpret user input and generate structured JSON output conforming to the Hackathon Canvas schema. The `src/services/openai.js` file demonstrates the integration with the OpenAI API.
+ChatGPT was used throughout the project to:
 
-*   **Codex Integration (Conceptual/Workflow):** While direct runtime integration of Codex is not applicable for a frontend application in the same way as GPT models, the development process of HackMate AI was significantly accelerated by using Codex (or similar AI coding assistants like GitHub Copilot, which is powered by OpenAI Codex) for:
-    *   **Code Generation:** Assisting in scaffolding React components, utility functions, and API integration logic.
-    *   **Debugging and Refactoring:** Helping identify and fix issues, and suggesting improvements to code structure and efficiency.
-    *   **Documentation:** Generating initial drafts for comments and README content.
-    *   **Learning and Exploration:** Understanding new libraries and frameworks by asking Codex for explanations and examples.
+- Plan the overall project architecture
+- Design the Hackathon Canvas structure
+- Improve prompts for better AI responses
+- Debug React components
+- Improve the UI/UX
+- Review project structure
+- Help prepare the README and documentation
+- Review deployment and submission requirements
 
-    *To fulfill the Codex requirement for the OpenAI Build Week, a detailed explanation of how Codex was used during development would be provided in the submission, potentially including timestamped session logs or commit messages indicating AI assistance.*
+### OpenAI Codex
+
+OpenAI Codex acted as the development assistant during implementation.
+
+It helped with:
+
+- Refactoring React components
+- Debugging runtime issues
+- Reviewing component structure
+- Improving project organization
+- Fixing API integration problems
+- Reviewing deployment workflow
+- Assisting with Git and GitHub issues
+
+Codex significantly reduced development time by providing code suggestions, debugging support, and architectural improvements throughout the project.
+
+### Gemini API
+
+The final application uses Google's Gemini API to generate a complete Hackathon Canvas based on the user's project idea.
+
+The AI returns structured JSON including:
+
+- Idea Summary
+- MVP
+- Tech Stack
+- Team Roles
+- 48-Hour Plan
+- Monetization
+- Winning Tips
+
+The generated canvas can then be edited by the user and exported as Markdown or PDF.
 
 ## Setup and Installation
 
@@ -43,12 +77,12 @@ To get HackMate AI up and running locally, follow these steps:
     npm install
     ```
 
-3.  **Configure OpenAI API Key:**
-    Create a `.env` file in the root directory of the project and add your OpenAI API key:
+3.  **Configure GEMINI API Key:**
+    Create a `.env` file in the root directory of the project and add your GEMINI APIkey:
     ```
-    VITE_OPENAI_API_KEY=YOUR_OPENAI_API_KEY_HERE
+    VITE_GEMINI_API_KEY=YOUR_GEMINI_API_KEY_HERE
     ```
-    *Replace `YOUR_OPENAI_API_KEY_HERE` with your actual OpenAI API Key.*
+    *Replace `YOUR_GEMINI_API_KEY_HERE` with your actual GEMINI API Key.*
 
 4.  **Run the development server:**
     ```bash
@@ -75,7 +109,7 @@ HackMate-AI/
 │   ├── assets/             # Images used in components
 │   ├── components/         # Reusable React components (e.g., ChatInput, HackathonCanvas)
 │   ├── services/
-│   │   └── openai.js       # OpenAI API integration logic
+│   │   └── gemini.js     # Gemini API integration logic
 │   ├── utils/
 │   ├── App.jsx             # Main application component
 │   └── main.jsx            # Entry point for React application
@@ -93,6 +127,23 @@ Contributions are welcome! Please feel free to fork the repository, create a new
 
 This project is open-source and available under the [MIT License](LICENSE).
 
-## Contact
+##Contact
 
-For any questions or feedback, please open an issue in the repository.
+## Developer
+
+Created by Yasmine Sakr
+
+GitHub:
+https://github.com/Yasmine-sakr
+
+LinkedIn:
+https://www.linkedin.com/in/yasmine-sakr-952690326
+
+## Acknowledgments
+
+Special thanks to:
+
+- Google Gemini API for powering the Hackathon Canvas generation.
+- OpenAI ChatGPT (GPT-5.6) for architecture planning, debugging, documentation, and development support.
+- OpenAI Codex for code review, refactoring, debugging assistance, and implementation guidance throughout development.
+
