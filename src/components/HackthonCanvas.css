@@ -1,0 +1,293 @@
+.hackathon-canvas {
+  --canvas-card: rgba(30, 37, 78, 0.64);
+  --canvas-border: rgba(163, 177, 255, 0.16);
+  --canvas-text: #f5f7ff;
+  --canvas-muted: #aeb9e5;
+  --canvas-violet: #9587ff;
+  --canvas-cyan: #57d5f9;
+
+  flex: 0 0 auto;
+  max-height: min(52vh, 500px);
+  margin: 0 clamp(16px, 4vw, 48px) 18px;
+  padding: 24px;
+  overflow: auto;
+  border: 1px solid var(--canvas-border);
+  border-radius: 22px;
+  color: var(--canvas-text);
+  background:
+    radial-gradient(circle at 100% 0%, rgba(95, 204, 255, 0.13), transparent 34%),
+    radial-gradient(circle at 0% 100%, rgba(143, 116, 255, 0.16), transparent 38%),
+    rgba(18, 23, 53, 0.72);
+  box-shadow:
+    0 16px 40px rgba(0, 0, 0, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.045);
+  backdrop-filter: blur(18px);
+  scrollbar-color: rgba(135, 145, 235, 0.5) transparent;
+  scrollbar-width: thin;
+}
+
+.canvas-header {
+  margin-bottom: 20px;
+}
+
+.canvas-kicker {
+  margin: 0 0 7px;
+  color: var(--canvas-cyan);
+  font-family: "DM Mono", monospace;
+  font-size: 0.64rem;
+  font-weight: 500;
+  letter-spacing: 0.13em;
+}
+
+.canvas-header h2 {
+  margin: 0;
+  color: #fbfcff;
+  font-size: clamp(1.3rem, 3vw, 1.7rem);
+  letter-spacing: -0.04em;
+}
+
+.canvas-header > p:last-child {
+  margin: 7px 0 0;
+  color: var(--canvas-muted);
+  font-size: 0.85rem;
+}
+
+.canvas-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.canvas-card {
+  grid-column: span 4;
+  min-height: 154px;
+  padding: 16px;
+  overflow: hidden;
+  border: 1px solid var(--canvas-border);
+  border-radius: 16px;
+  background: var(--canvas-card);
+  box-shadow:
+    0 8px 22px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.035);
+  transition: transform 180ms ease, border-color 180ms ease,
+    background 180ms ease, box-shadow 180ms ease;
+}
+
+.canvas-card:hover {
+  border-color: rgba(151, 139, 255, 0.48);
+  background: rgba(41, 49, 102, 0.78);
+  box-shadow: 0 13px 28px rgba(0, 0, 0, 0.18);
+  transform: translateY(-3px);
+}
+
+.canvas-card--ideaSummary,
+.canvas-card--mvp,
+.canvas-card--plan48Hours,
+.canvas-card--winningTips {
+  grid-column: span 6;
+}
+
+.canvas-card--winningTips {
+  border-color: rgba(116, 211, 255, 0.2);
+  background:
+    linear-gradient(135deg, rgba(103, 87, 231, 0.19), rgba(44, 172, 226, 0.1)),
+    var(--canvas-card);
+}
+
+.canvas-card__title {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 12px;
+}
+
+.canvas-card__title span {
+  display: grid;
+  width: 30px;
+  height: 30px;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1px solid rgba(164, 160, 255, 0.16);
+  border-radius: 9px;
+  font-size: 0.95rem;
+  background: rgba(116, 101, 232, 0.15);
+}
+
+.canvas-card__title h3 {
+  margin: 0;
+  color: #eef0ff;
+  font-size: 0.89rem;
+  letter-spacing: -0.01em;
+}
+
+.canvas-card__content {
+  color: var(--canvas-muted);
+  font-size: 0.82rem;
+  line-height: 1.58;
+}
+
+.canvas-card__content p {
+  margin: 0;
+  white-space: pre-line;
+}
+
+.canvas-card__content ul {
+  display: grid;
+  gap: 7px;
+  margin: 0;
+  padding-left: 17px;
+}
+
+.canvas-card__content li::marker {
+  color: var(--canvas-cyan);
+}
+.canvas-card {
+  cursor: pointer;
+  animation: canvasEnter 0.4s ease both;
+}
+
+
+.canvas-card.active {
+  border-color: rgba(87, 213, 249, 0.7);
+  transform: translateY(-5px);
+}
+
+
+.canvas-expand {
+  margin-left: auto;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.15);
+  color: white;
+  background: rgba(255,255,255,0.08);
+  cursor: pointer;
+}
+
+
+.canvas-card__content {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: 
+    max-height 300ms ease,
+    opacity 300ms ease;
+}
+
+
+.canvas-card__content.show {
+  max-height: 400px;
+  opacity: 1;
+}
+
+
+.preview {
+  color: #57d5f9;
+  font-size: 0.75rem;
+}
+
+
+@keyframes canvasEnter {
+
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+@media (max-width: 680px) {
+  .hackathon-canvas {
+    max-height: 46vh;
+    margin: 0 16px 14px;
+    padding: 17px;
+    border-radius: 18px;
+  }
+
+  .canvas-grid {
+    gap: 10px;
+  }
+
+  .canvas-card,
+  .canvas-card--ideaSummary,
+  .canvas-card--mvp,
+  .canvas-card--plan48Hours,
+  .canvas-card--winningTips {
+    grid-column: span 12;
+    min-height: 0;
+  }
+}
+
+.canvas-actions {
+  display: flex;
+  gap: 8px;
+  margin-left: auto;
+}
+
+.canvas-action-button {
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.canvas-action-button.edit {
+  background-color: rgba(87, 213, 249, 0.2);
+  border: 1px solid rgba(87, 213, 249, 0.5);
+  color: #57d5f9;
+}
+
+.canvas-action-button.edit:hover {
+  background-color: rgba(87, 213, 249, 0.3);
+}
+
+.canvas-action-button.save {
+  background-color: rgba(149, 135, 255, 0.2);
+  border: 1px solid rgba(149, 135, 255, 0.5);
+  color: #9587ff;
+}
+
+.canvas-action-button.save:hover {
+  background-color: rgba(149, 135, 255, 0.3);
+}
+
+.canvas-action-button.cancel {
+  background-color: rgba(255, 99, 71, 0.2);
+  border: 1px solid rgba(255, 99, 71, 0.5);
+  color: #ff6347;
+}
+
+.canvas-action-button.cancel:hover {
+  background-color: rgba(255, 99, 71, 0.3);
+}
+
+.canvas-card__textarea {
+  width: 100%;
+  min-height: 150px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--canvas-border);
+  border-radius: 8px;
+  padding: 10px;
+  color: var(--canvas-text);
+  font-family: inherit;
+  font-size: 0.82rem;
+  line-height: 1.58;
+  resize: vertical;
+}
+.canvas-card__title span {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg,#7c3aed,#4f46e5);
+  color: white;
+  font-size: 18px;
+  flex-shrink: 0;
+}
