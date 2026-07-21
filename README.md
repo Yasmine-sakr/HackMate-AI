@@ -127,7 +127,7 @@ Contributions are welcome! Please feel free to fork the repository, create a new
 
 This project is open-source and available under the [MIT License](LICENSE).
 
-##Contact
+## Contact
 
 ## Developer
 
