@@ -78,7 +78,7 @@ To get HackMate AI up and running locally, follow these steps:
     ```
 
 3.  **Configure GEMINI API Key:**
-    Create a `.env` file in the root directory of the project and add your GEMINI APIkey:
+    Create a `.env` file in the root directory of the project and add your GEMINI API key:
     ```
     VITE_GEMINI_API_KEY=YOUR_GEMINI_API_KEY_HERE
     ```
@@ -113,7 +113,7 @@ HackMate-AI/
 │   ├── utils/
 │   ├── App.jsx             # Main application component
 │   └── main.jsx            # Entry point for React application
-├── .env                    # Environment variables (e.g., OpenAI API Key)
+├── .env                    # Environment variables (e.g.,Gemini API Key)
 ├── package.json            # Project dependencies and scripts
 ├── vite.config.js          # Vite configuration
 └── README.md               # Project documentation
@@ -127,7 +127,7 @@ Contributions are welcome! Please feel free to fork the repository, create a new
 
 This project is open-source and available under the [MIT License](LICENSE).
 
-## Contact
+#
 
 ## Developer
 
@@ -143,7 +143,6 @@ https://www.linkedin.com/in/yasmine-sakr-952690326
 
 Special thanks to:
 
-- Google Gemini API for powering the Hackathon Canvas generation.
 - OpenAI ChatGPT (GPT-5.6) for architecture planning, debugging, documentation, and development support.
 - OpenAI Codex for code review, refactoring, debugging assistance, and implementation guidance throughout development.
 
